@@ -1,0 +1,100 @@
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.15em solid black;
+            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        .transparent {
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: background-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Gupter', serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .custom-rounded {
+            border-radius: 2rem; /* Custom border-radius */
+        }
+
+        .splide__slide {
+            padding: 1rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .project-card img {
+            border-radius: 1rem;
+        }
+
+        .spiral-binding {
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .spiral-binding div {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .spiral-binding div:nth-child(odd) {
+            background: gray;
+        }
+
+        .project-card::before, .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2rem;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1));
+            border-radius: 1rem;
+        }
+
+        .project-card::before {
+            left: -1rem;
+        }
+
+        .project-card::after {
+            right: -1rem;
+            transform: scaleX(-1);
+        }
+
+        .project-card:not(:first-child)::before {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .project-card:not(:first-child)::after {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }

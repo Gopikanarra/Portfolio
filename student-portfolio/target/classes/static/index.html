@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopika's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopika's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+ <style>
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 0.15em solid black;
+            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        .transparent {
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: background-color 0.3s ease;
+        }
+
+        body {
+            font-family: 'Gupter', serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .custom-rounded {
+            border-radius: 2rem; /* Custom border-radius */
+        }
+
+        .splide__slide {
+            padding: 1rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .project-card img {
+            border-radius: 1rem;
+        }
+
+        .spiral-binding {
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .spiral-binding div {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: black;
+            border-radius: 50%;
+        }
+
+        .spiral-binding div:nth-child(odd) {
+            background: gray;
+        }
+
+        .project-card::before, .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2rem;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1));
+            border-radius: 1rem;
+        }
+
+        .project-card::before {
+            left: -1rem;
+        }
+
+        .project-card::after {
+            right: -1rem;
+            transform: scaleX(-1);
+        }
+
+        .project-card:not(:first-child)::before {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .project-card:not(:first-child)::after {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  
+    <nav id="navbar" class="bg-white shadow-lg h-20 fixed w-full z-50 top-0 left-0 flex items-center">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+               <a href="#home" class="text-xl font-bold text-gray-900">
+    <img src="/images/logo.png" alt="Logo" class="w-30 h-20">
+</a>
+
+            </div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#home" class="text-gray-900">Home</a>
+                <a href="#about" class="text-gray-900">About</a>
+                 <a href="#projects" class="text-gray-900">Projects</a>
+                <a href="#skills" class="text-gray-900">Skills</a>
+                <a href="#blogs" class="text-gray-900">Blogs</a>
+                <a href="#contact" class="text-gray-900">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-900 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden w-full">
+            <a href="#home" class="block text-gray-900 mt-2">Home</a>
+            <a href="#about" class="block text-gray-900 mt-2">About</a>
+            <a href="#skills" class="block text-gray-900 mt-2">Skills</a>
+            <a href="#projects" class="block text-gray-900 mt-2">Projects</a>
+            <a href="#contact" class="block text-gray-900 mt-2">Contact</a>
+        </div>
+    </nav>
+	<br/>
+	<br/>
+    <header id="home" class="bg-gray-800 text-white text-center py-10">
+        <h1 class="text-4xl font-bold">Welcome to My Portfolio</h1>
+        <p class="mt-4 text-lg">Showcasing my skills, projects, and more</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+    <div class="pl-8"> <!-- Adding left padding here -->
+        <section class="flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h1 class="text-6xl">Hey,I am <b>Gopika</b></h1>
+                <br/>
+                <h3 class="text-2xl font-bold"> - a full stack developer specializing in Java and React.js.</h3>
+               <br/>
+                <h3> I'm passionate about bringing ideas to life through <b>dynamic </b>and <b>efficient </b>web applications. By combining the sleekness of<b><i> React.js</i></b> with the strength of <b><i>Spring Boot</i></b>, I craft innovative solutions that make a real impact. Let's create something amazing together!</h3>
+            </div>
+            <div class="w-full md:w-1/2 mt-8 md:mt-0 text-center">
+                <img src="/images/spring.jpg" alt="Your Picture" class="rounded-3xl shadow-lg w-full md:w-3/4 mx-auto">
+            </div>
+        </section>
+        
+        <br/>
+       <br/>
+       <br/>
+       <br/>
+         <section id="about" class="py-8 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <img src="/images/about.jpg" alt="About Me" class="rounded-3xl md:w-4/2 shadow-lg w-full">
+            </div>
+            <div class="w-full md:w-1/2 text-center md:text-left md:pl-8">
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                <br><p class="text-lg mb-4">I build applications that are both functional and delightful. My work spans a variety of projects, from sleek, interactive user interfaces to robust, scalable backend solutions.Driven by a love for technology and a knack for problem-solving, I am dedicated to crafting solutions that not only meet user needs but also exceed expectations. Let’s connect and explore how we can create something amazing together!</p>
+                <a href="https://drive.google.com/file/d/1_Ks9bmNIScC8pDiiBoygvE0zlDEb4BTV/view?usp=sharing" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300">Download Resume</a>
+            </div>
+        </section>
+       <br/>
+       <br/>
+       <br/>
+
+           <section id="projects" class="py-8">
+                <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+                <div id="splide" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="project-card">
+                                    <div class="spiral-binding">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <img src="/images/BOOKS_PROJECT.jpg" alt="Library Management System" class="w-full h-48 object-cover rounded-t-lg">
+                                    <h3 class="text-xl font-bold mt-4">Library Management System</h3>
+                                    <a href="https://github.com/Gopikanarra/Library-management-System" target="_blank" class="mt-2 inline-block bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600">Source Code</a>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="project-card">
+                                    <div class="spiral-binding">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <img src="/images/console-bank.png" alt="Console-based Bank Application" class="w-full h-48 object-cover rounded-t-lg">
+                                    <h3 class="text-xl font-bold mt-4">Console-based Bank Application</h3>
+                                    <a href="https://github.com/Gopikanarra/console---based-bank-application" target="_blank" class="mt-2 inline-block bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600">Source Code</a>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="project-card">
+                                    <div class="spiral-binding">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <img src="/images/feedback.jpeg" alt="Project 3" class="w-full h-48 object-cover rounded-t-lg">
+                                    <h3 class="text-xl font-bold mt-4">Feedback Server</h3>
+                                    <a href="https://github.com/Feedbackserver-project/Final-Project" target="_blank" class="mt-2 inline-block bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600">Source Code</a>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="project-card">
+                                    <div class="spiral-binding">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <img src="/images/guesser_game.png" alt="Project 4" class="w-full h-48 object-cover rounded-t-lg">
+                                    <h3 class="text-xl font-bold mt-4">Guesser game </h3>
+                                    <a href="https://github.com/Gopikanarra/GUESSERGAME" target="_blank" class="mt-2 inline-block bg-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600">Source Code</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+   <section id="skills" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
+            <div class="flex flex-wrap justify-center space-x-6">
+                <!-- Skill Item -->
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-html5 fa-3x text-red-600"></i>
+                    <span class="mt-2 text-xl">HTML</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-css3-alt fa-3x text-blue-500"></i>
+                    <span class="mt-2 text-xl">CSS</span>
+                </div>
+                  <div class="flex flex-col items-center">
+                    <i class="fab fa-react fa-3x text-cyan-600"></i>
+                    <span class="mt-2 text-xl">React.js</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-java fa-3x text-blue-600"></i>
+                    <span class="mt-2 text-xl">Java</span>
+                </div>
+                  <div class="flex flex-col items-center">
+                    <i class="fas fa-database fa-3x text-orange-600"></i>
+                    <span class="mt-2 text-xl">Hibernate</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-cubes fa-3x text-green-600"></i>
+                    <span class="mt-2 text-xl">Spring Boot</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-network-wired fa-3x text-purple-600"></i>
+                    <span class="mt-2 text-xl">Microservices</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-code-branch fa-3x text-gray-600"></i>
+                    <span class="mt-2 text-xl">REST API</span>
+                </div>
+                 <div class="flex flex-col items-center">
+                    <i class="fas fa-code fa-3x text-yellow-600"></i>
+                    <span class="mt-2 text-xl">Python</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-cloud fa-3x text-blue-400"></i>
+                    <span class="mt-2 text-xl">GCP</span>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-database fa-3x text-purple-500"></i>
+                    <span class="mt-2 text-xl">MySQL</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-git fa-3x text-red-600"></i>
+                    <span class="mt-2 text-xl">Git</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fab fa-github fa-3x text-black"></i>
+                    <span class="mt-2 text-xl">GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="blogs" class="py-8">
+    <h2 class="text-3xl font-bold text-center mb-8">Blogs</h2>
+    <div class="flex flex-wrap justify-center">
+        <div class="w-full md:w-1/3 p-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-2">Top Java 8 features with examples</h3>
+                <p class="text-gray-700">A brief description or excerpt from the blog post to give visitors an idea about Java 8 features.</p>
+                <a href="https://ngcode.wixsite.com/codecafe/post/top-java-8-features-with-examples" target="_blank" class="text-blue-500 mt-4 inline-block">Read More</a>
+            </div>
+        </div>
+        <div class="w-full md:w-1/3 p-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-2">Serialization and Deserialization </h3>
+                <p class="text-gray-700">A beginers guide to learn Serialization and deserialization .</p>
+                <a href="https://kodekafe.hashnode.dev/serialization-and-deserialization-in-java" target="_blank" class="text-blue-500 mt-4 inline-block">Read More</a>
+            </div>
+        </div>
+        <div class="w-full md:w-1/3 p-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-2">Blob and Clob in java</h3>
+                <p class="text-gray-700">Don't know how to store images, videos and other formats data in your database prefebly in MySQL .. this helps you .</p>
+                <a href="https://kodekafe.hashnode.dev/blob-in-java" target="_blank" class="text-blue-500 mt-4 inline-block">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+ <section id="contact" class="py-12 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-4xl font-bold mb-8 text-center">Contact</h1>
+            <form action="/submitContactForm" method="post" class="bg-white p-8 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label for="name" class="block text-lg font-semibold mb-2">Name:</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-lg font-semibold mb-2">Email:</label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="subject" class="block text-lg font-semibold mb-2">Subject:</label>
+                    <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-lg font-semibold mb-2">Message:</label>
+                    <textarea id="message" name="message" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="5"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-300">Submit</button>
+            </form>
+        </div>
+    </section>
+</div>
+    </main>
+s
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>&copy; 2024 Gopika's Portfolio. All rights reserved.<br/> For source code  <a class="font-bold" href="">Click here </a>  </p>
+    </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Splide/3.6.11/splide.min.js" integrity="sha512-PnEalJlCly5GRvhYrWbdPzHe/yA+kAgsXcgpwbMl+ViWVUXxlcsayC61GL+Yq+P7XX70u1d9eDAG1fxbu5HF0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            document.getElementById('menu-button').addEventListener('click', function() {
+                var menu = document.getElementById('mobile-menu');
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                } else {
+                    menu.classList.add('hidden');
+                }
+            });
+
+            window.addEventListener('scroll', function() {
+                var navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('transparent');
+                } else {
+                    navbar.classList.remove('transparent');
+                }
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+                new Splide('#splide', {
+                    type   : 'loop',
+                    padding: '5rem', // Adjust the padding to give space between slides
+                    perPage: 1,      // Show one slide at a time
+                    breakpoints: {
+                        640: {
+                            perPage: 1,
+                            padding: '1rem',
+                        },
+                        1024: {
+                            perPage: 2,
+                            padding: '2rem',
+                        },
+                    },
+                }).mount();
+            });
+        </script>
+</body>
+</html>
+
+
+    <!-- <div id="navbar-container"></div>
+    <br/>
+    <br/>
+    <br/>
+    <div id="home"></div>
+    <div id="about"></div>
+    <div id="projects"></div>
+    <div id="skills"></div>
+    <div id="blogs"></div>
+    <div id="contact"></div>
+    <footer id="footer"></footer>
+
+    <script src="/js/script.js"></script> -->
+
+</body>
+</html>
